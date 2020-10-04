@@ -23,7 +23,7 @@ cat << EOF > /usr/local/etc/v2ray/config.json
                     {
                         "id": "$UUID"
                     }
-                ]，
+                ],
 				"decryption": "none"
             },
             "streamSettings": {
