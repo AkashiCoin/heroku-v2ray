@@ -13,12 +13,15 @@ cat << EOF > ${DIR_TMP}/heroku.json
         "protocol": "vmess",
         "settings": {
             "clients": [{
-                "id": "${UUID}",
-                "alterId": 64
+                "id": "${ID}",
+                "alterId": ${AID}
             }]
         },
         "streamSettings": {
-            "network": "ws"
+            "network": "ws",
+            "wsSettings": {
+                "path": "${WSPATH}"
+            }
         }
     }],
     "outbounds": [{

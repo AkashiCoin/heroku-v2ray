@@ -1,35 +1,34 @@
 # V2Ray Heroku
 
-**由于 Heroku 已经封禁本项目，请 Fork 本项目后，修改 README.md 中的部署链接为自己的用户名后，再进行部署。**
+**Heroku 已经封禁本专案，请 Fork 本专案后，修改 README.md 中的 `bclswl0827` 替换为自己的用户名后，再进行部署。**
 
 ## 概述
 
-用于在 Heroku 上部署 V2Ray Websocket。
+本专案用于在 Heroku 上部署 V2Ray Websocket，在合理使用的程度下，本镜像不会因为大量占用资源而导致封号。
 
-**Heroku 为我们提供了免费的容器服务，我们不应该滥用它，所以本项目不宜做为长期翻墙使用。**
+部署完成后，每次启动应用时，运行的 V2Ray 将始终为最新版本。
 
-**可以部署两个以上的应用，实现 [负载均衡](https://toutyrater.github.io/routing/balance2.html)，避免长时间大流量连接某一应用而被 Heroku 判定为滥用。**
+[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/bclswl0827/v2ray-heroku)
 
-**Heroku 的网络并不稳定，部署前请三思。**
+## 部署
 
-## 镜像
+对部署时需设定的变量名称做如下说明。
 
-本镜像不会因为大量占用资源而被封号。
+| 变量 | 默认值 | 说明 |
+| :--- | :--- | :--- |
+| `ID` | `ad806487-2d26-4636-98b6-ab85cc8521f7` | VMess 用户主 ID，用于身份验证，为 UUID 格式 |
+| `AID` | `64` | 为进一步防止被探测所设额外 ID，即 AlterID，范围为 0 至 65535 |
+| `WSPATH` | `/` | WebSocket 所使用的 HTTP 协议路径 |
 
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https%3A%2F%2Fgithub.com%2Fbclswl0827%2Fv2ray-heroku)
+## 接入 CDN
 
-## ENV 设定
+以下两种方式均可以将应用接入 CloudFlare，从而在一定程度上提升速度。
 
-### UUID
-
-`UUID` > `一个 UUID，供用户连接时验证身份使用`。
+ 1. 为应用绑定域名后，将域名接入 CloudFlare
+ 2. 通过 CloudFlare Workers 反向代理
 
 ## 注意
 
-WebSocket 路径为 `/`。
-
-`alterId` 为 `64`。
-
-V2Ray 将在部署时自动安装最新版本。
-
-**出于安全考量，除非使用 CDN，否则请不要使用自定义域名，而使用 Heroku 分配的二级域名，以实现 V2Ray Websocket + TLS。**
+ 1. **请勿滥用本专案，类似 Heroku 的免费服务少之又少，且用且珍惜**
+ 2. 若使用域名接入 CDN，请考虑启用 TLS 1.3
+ 3. AWS 部分 IP 被 Twitter 屏蔽
