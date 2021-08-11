@@ -1,4 +1,4 @@
-FROM alpine:3.5
+FROM alpine:latest
 
 ADD entrypoint.sh /opt/entrypoint.sh
 
