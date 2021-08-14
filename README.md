@@ -1,18 +1,26 @@
 # V2Ray Heroku
 
-**Heroku 已经封禁本专案，请 Fork 本专案后，将 `README.md` 中的 `bclswl0827` 替换为自己的用户名后，再进行部署。**
-
 **若需部署 V2Ray VLESS，请转到 [vless](https://github.com/bclswl0827/v2ray-heroku/tree/vless) 分支。**
 
 ## 概述
 
 本专案用于在 Heroku 上部署 V2Ray WebSocket，在合理使用的程度下，本镜像不会因为大量占用资源而导致封号。
 
-部署完成后，每次启动应用时，运行的 V2Ray 将始终为最新版本。
-
-[![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/bclswl0827/v2ray-heroku)
+部署完成后，每次启动应用时，运行的 V2Ray 将始终为最新版本
 
 ## 部署
+
+### 步骤
+
+ 1. Fork 本专案到自己的 GitHub 账户（用户名以 `example` 为例）
+ 2. 修改专案名称，注意不要包含 `v2ray` 和 `heroku` 两个关键字
+ 3. 修改 `README.md`，修改下述部署用户名和专案名为自己所 Fork 的
+
+> [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://dashboard.heroku.com/new?template=https://github.com/bclswl0827/v2ray-heroku)
+
+ 4. 回到专案首页，点击上面的链接以部署 V2Ray
+
+### 变量
 
 对部署时需设定的变量名称做如下说明。
 
