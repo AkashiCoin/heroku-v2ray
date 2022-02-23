@@ -1,0 +1,15 @@
+services:
+  # A Docker web service
+  - type: web
+    name: v2ray
+    env: docker
+    repo: https://github.com/akashicoin/Heroku-v2ray.git # optional
+    region: Singapore  # optional (defaults to oregon)
+    plan: free # optional (defaults to starter)
+    healthCheckPath: /
+    envVars:
+      - key: ID
+        value: ad806487-2d26-4636-98b6-ab85cc8521f7
+      - key: WSPATH
+        value: /
+      
